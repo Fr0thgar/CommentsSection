@@ -15,14 +15,13 @@ include 'comments.inc.php';
 
 <body>
 
-    <iframe src="https://wallpapercave.com/wp/wp1835118.jpg" frameborder="0" allowfullscreen></iframe>
 
     <?php
-    echo "<form meth='POST' action='" . setComments($conn) . "'>
+    echo "<form method='POST' action='" . setComments($conn) . "'>
 <input type='hidden' name='uid' value='Anonymous'>
 <input type='hidden' name='date' value='" . date('Y-m-d H:i:s') . "'>
 <textarea name='message'></textarea> <br>
-<button name='commentSubmit' type='submit'>Submit</button>
+<button type='submit' name='commentSubmit' >Comment</button>
 
 </form>";
     ?>
