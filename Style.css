@@ -1,0 +1,22 @@
+textarea {
+    width: 400px;
+    height: 80px;
+    background-color: #ffffff;
+    resize: none;
+
+}
+
+button { width: 100px;
+height: 30px;
+background-color: #282828;
+border:none;
+color: #FFF;
+font-family: sans-serif;
+font-weight: 400;
+cursor: pointer;}
+
+iframe {
+width: 853px;
+height: 480px;
+border: 1px solid #999999;
+}
