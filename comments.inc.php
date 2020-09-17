@@ -7,7 +7,7 @@ function setComments($conn)
         $date = $_POST['date'];
         $message = $_POST['message'];
 
-        $sql = "INSERT INTO 'comments' (uId, Date, message) VALUES ('.$uid.', '.$date.', '.$message.')";
+        $sql = "INSERT INTO 'comments' (uid, date, message) VALUES ('.$uid.', '.$date.', '.$message.')";
         $result = $conn->query($sql);
     }
 }
