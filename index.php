@@ -24,6 +24,8 @@ include 'comments.inc.php';
 <button type='submit' name='commentSubmit' >Comment</button>
 
 </form>";
+
+getComments($conn);
     ?>
 </body>
 </head>
