@@ -24,12 +24,11 @@ session_start();
     echo "<form method='POST' action='" . userLogout() . "'>
     <button type='submit' name='logoutSubmit'>Log out</button>
 </form>";
-if(isset($_SESSION['id'])){
-    echo "You are logged in!";
-
-}else {
-    echo "You are Not logged in!";
-}
+    if (isset($_SESSION['id'])) {
+        echo "You are logged in!";
+    } else {
+        echo "You are Not logged in!";
+    }
 
     ?>
 
