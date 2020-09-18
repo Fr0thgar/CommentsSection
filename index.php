@@ -17,12 +17,12 @@ session_start();
 
     <?php
     echo "<form method='POST' action='" . getLogin($conn) . "'>
-    <input type= 'text' name='uid'>
-    <input type='password ' name='pwd'>
-    <button type='submit' name='loginSubmit'></button>
+    <input type= 'text' name='uid' placeholder='Username'>
+    <input type='password ' name='pwd' placeholder='Password'>
+    <button type='submit' name='loginSubmit'>Login</button>
 </form>";
     echo "<form method='POST' action='" . userLogout() . "'>
-    <button type='submit' name='logoutSubmit'></button>
+    <button type='submit' name='logoutSubmit'>Log out</button>
 </form>";
     ?>
 
