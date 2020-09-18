@@ -73,7 +73,7 @@ function getLogin($conn)
 
         $sql = "SELECT * FROM user WHERE uid ='$uid' AND pwd='$pwd";
         $result = $conn->query($sql);
-        if (mysqli_num_rows($result) > 0) {
+        if (mysqli_num_rows($result) == 1) {
             if ($row = $result->fetch_assoc()) {
                 $_SESSION['id'] = $row['id'];
                 header("Location: index.php?loginsuccess");
@@ -88,4 +88,10 @@ function getLogin($conn)
 
 function userLogout()
 {
+    if (isset($_POST['logoutSubmit'])) {
+        session_start();
+        session_destroy();
+        header("Location: index.php");
+        exit();
+    }
 }
