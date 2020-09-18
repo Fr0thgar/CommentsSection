@@ -2,7 +2,7 @@
 date_default_timezone_set('Europe/Copenhagen');
 include 'dbh.inc.php';
 include 'comments.inc.php';
-
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +15,18 @@ include 'comments.inc.php';
 
 <body>
 
+    <?php
+    echo "<form method='POST' action='" . getLogin($conn) . "'>
+    <input type= 'text' name='uid'>
+    <input type='password ' name='pwd'>
+    <button type='submit' name='loginSubmit'></button>
+</form>";
+    echo "<form method='POST' action='" . userLogout() . "'>
+    <button type='submit' name='logoutSubmit'></button>
+</form>";
+    ?>
+
+    <br><br>
 
     <?php
     echo "<form method='POST' action='" . setComments($conn) . "'>
@@ -25,7 +37,7 @@ include 'comments.inc.php';
 
 </form>";
 
-getComments($conn);
+    getComments($conn);
     ?>
 </body>
 </head>

@@ -63,3 +63,22 @@ border: 1px solid #999999;
 .edit-form button:hover {
     opacity: 1;
 }
+
+.delete-form {
+    position: absolute;
+    top: 0px;
+    right: 45px;
+
+}
+
+.delete-form button{
+    width: 40px;
+    height: 20px;
+    color: #282828;
+    background-color: #fff;
+    opacity: 0.7;
+}
+
+.delete-form button:hover {
+    opacity: 1;
+}
