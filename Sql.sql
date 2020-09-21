@@ -5,11 +5,11 @@ CREATE TABLE comments (
     message TEXT not null
 );
 
-CREATE TABLE user (
+CREATE TABLE users (
 	id int(11) not Null AUTO_INCREMENT PRIMARY KEY,
     uid varchar(128) not null,
     pwd varchar(128) not null
 );
 
-INSERT INTO user (uid, pwd) VALUES ('admin', 'nimda');
-INSERT INTO user (uid, pwd) VALUES ('daniel', '123');
+INSERT INTO users (uid, pwd) VALUES ('admin', '123');
+INSERT INTO users (uid, pwd) VALUES ('daniel', '123');
