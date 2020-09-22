@@ -9,6 +9,11 @@ function setComments($conn)
 
         $sql = "INSERT INTO comments (uid, date, message) VALUES ('$uid', '$date', '$message')";
         $result = $conn->query($sql);
+
+        $uid = '';
+        $date = '';
+        $message ='';
+    
     }
 }
 
@@ -127,3 +132,4 @@ function userLogout()
         exit();
     }
 }
+

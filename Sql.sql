@@ -19,3 +19,13 @@ else {
             header("Location: index.php?loginfailed");
             exit();
         }
+
+
+        function clearform()
+    {
+        document.getElementByName("uid") . value = "";
+        document.getElementByName("date") . value = "";
+        document.getElementByName("message") . value = "";
+    }
+
+    onClick='" . clearform() . "'
