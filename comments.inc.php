@@ -15,7 +15,34 @@ function setComments($conn)
 
 function getComments($conn)
 {
-    $sql = "SELECT * FROM comments";
+    
+    $sql = "select u.uid, c.uid, c.message, c.date
+            from comments c
+                left outer join users u on c.uid = u.id";
+    
+    $results = $conn->query($sql);
+    
+    while($row = $results->fetch_assoc()){
+        echo "<div class='comment-box'><p>";
+        echo $row['u.uid'] . "<br>";
+        echo $row['c.date'] . "<br>";
+        echo nl2br($row['c.message']);
+        echo "</p>
+            "<form class='delete-form' method = 'POST' action='" . deleteComments($conn) . "'>
+                <input type='hidden' name='cid' value='" . $row['cid'] . "'>
+                <button type='submit' name='deleteComment'>Delete</button>
+                </form>
+                <form class='edit-form' method = 'POST' action='editComments.php'>
+                <input type='hidden' name='cid' value='" . $row['cid'] . "'>
+                <input type='hidden' name='uid' value='" . $row['uid'] . "'>
+                <input type='hidden' name='date' value='" . $row['date'] . "'>
+                <input type='hidden' name='message' value='" . $row['message'] . "'>
+                <button>Edit</button>
+                </form>
+            </div>";
+    }
+    /*
+  $sql = "SELECT * FROM comments";
     $result = $conn->query($sql);
 
     while ($row = $result->fetch_assoc()) {
@@ -41,7 +68,7 @@ function getComments($conn)
                 </form>
             </div>";
         }
-    }
+    */}
 }
 
 function editComments($conn)
