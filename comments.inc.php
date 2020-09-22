@@ -16,7 +16,7 @@ function setComments($conn)
 function getComments($conn)
 {
     
-    $sql = "select u.uid, c.uid, c.message, c.date
+    $sql = "select u.uid, c.message, c.date, c.cid
             from comments c
                 left outer join users u on c.uid = u.id";
     
@@ -24,11 +24,11 @@ function getComments($conn)
     
     while($row = $results->fetch_assoc()){
         echo "<div class='comment-box'><p>";
-        echo $row['u.uid'] . "<br>";
-        echo $row['c.date'] . "<br>";
-        echo nl2br($row['c.message']);
+        echo $row['uid'] . "<br>";
+        echo $row['date'] . "<br>";
+        echo nl2br($row['message']);
         echo "</p>
-            "<form class='delete-form' method = 'POST' action='" . deleteComments($conn) . "'>
+            <form class='delete-form' method = 'POST' action='" . deleteComments($conn) . "'>
                 <input type='hidden' name='cid' value='" . $row['cid'] . "'>
                 <button type='submit' name='deleteComment'>Delete</button>
                 </form>
@@ -68,7 +68,7 @@ function getComments($conn)
                 </form>
             </div>";
         }
-    */}
+    }*/
 }
 
 function editComments($conn)
