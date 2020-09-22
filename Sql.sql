@@ -12,7 +12,7 @@ CREATE TABLE users (
 );
 
 INSERT INTO users (uid, pwd) VALUES ('admin', '123');
-INSERT INTO users (uid, pwd) VALUES ('daniel', '123');
+INSERT INTO users (uid, pwd) VALUES ('jonas', '123');
 
 
 else {
