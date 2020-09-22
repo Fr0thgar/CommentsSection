@@ -13,3 +13,9 @@ CREATE TABLE users (
 
 INSERT INTO users (uid, pwd) VALUES ('admin', '123');
 INSERT INTO users (uid, pwd) VALUES ('daniel', '123');
+
+
+else {
+            header("Location: index.php?loginfailed");
+            exit();
+        }

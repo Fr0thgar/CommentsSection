@@ -22,9 +22,12 @@ session_start();
             <input type='password ' name='pwd' placeholder='Password'>
             <button type='submit' name='loginSubmit'>Login</button>
         </form>";
-    echo "<form method='POST' action='" . userLogout() . "'>
-    <button type='submit' name='logoutSubmit'>Log out</button>
-</form>";
+        echo "<form method='POST' action='" . userLogout() . "'>
+            <button type='submit' name='logoutSubmit'>Log out</button>
+        </form>";
+        if (isset($_SESSION['id'])) {
+            echo "You are logged in!";
+        } 
     ?>
 
     <?php
@@ -32,11 +35,11 @@ session_start();
         echo "<form method='POST' action='" . setComments($conn) . "'>
             <input type='hidden' name='uid' value='".$_SESSION['id']."'>
             <input type='hidden' name='date' value='" . date('Y-m-d H:i:s') . "'>
-            <textarea name='message'></textarea> <br>
-            <button type='submit' name='commentSubmit' >Comment</button>
+            <textarea name='message' placeholder='write your comment here'></textarea> <br>
+            <button type='submit' name='commentSubmit'>Comment</button>
             </form>";
     } else {
-        echo "You need to be logged in to comment;
+        echo "You need to be logged in to comment!
         <br><br>";
     }
 
