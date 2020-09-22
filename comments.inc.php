@@ -41,24 +41,6 @@ function getComments($conn)
                 </form>
             </div>";
         }
-
-        // echo "<div class='comment-box'><p>";
-        // echo $row['uid'] . "<br>";
-        // echo $row['date'] . "<br>";
-        // echo nl2br($row['message']);
-        // echo "</p>
-        //     <form class='delete-form' method = 'POST' action='" . deleteComments($conn) . "'>
-        //         <input type='hidden' name='cid' value='" . $row['cid'] . "'>
-        //         <button type='submit' name='deleteComment'>Delete</button>
-        //         </form>
-        //         <form class='edit-form' method = 'POST' action='editComments.php'>
-        //         <input type='hidden' name='cid' value='" . $row['cid'] . "'>
-        //         <input type='hidden' name='uid' value='" . $row['uid'] . "'>
-        //         <input type='hidden' name='date' value='" . $row['date'] . "'>
-        //         <input type='hidden' name='message' value='" . $row['message'] . "'>
-        //         <button>Edit</button>
-        //         </form>
-        //     </div>";
     }
 }
 
